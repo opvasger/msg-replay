@@ -1,7 +1,7 @@
 # Elm Msg-Replay
 Automatic message-replay for Elm!
 
-This project sets out to solve the same problems as "hot-reloading" known from JavaScript and other langugages.
+This project sets out to solve the same problems as "hot-reloading" known from JavaScript.
 
 ![Demo Gif](https://raw.githubusercontent.com/opvasger/msg-replay/0293828e73ef1b764a700bd8b003da202402871e/demo.gif)
 
