@@ -3,7 +3,7 @@
     "name": "opvasger/msg-replay",
     "summary": "Automatic message-replay for Elm!",
     "license": "BSD-3-Clause",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "exposed-modules": [
         "MsgReplay"
     ],
