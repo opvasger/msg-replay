@@ -3,7 +3,7 @@ Automatic message-replay for Elm!
 
 This project sets out to solve the same problems as "hot-reloading" known from JavaScript and other langugages.
 
-[Demo Gif](https://raw.githubusercontent.com/opvasger/msg-replay/0293828e73ef1b764a700bd8b003da202402871e/demo.gif)
+![Demo Gif](https://raw.githubusercontent.com/opvasger/msg-replay/0293828e73ef1b764a700bd8b003da202402871e/demo.gif)
 
 As [the Elm architecture](https://guide.elm-lang.org/architecture/) makes you model your interactions (usually dubbed `Msg`), I've designed the programs in this module to record those interactions, and then replay them instantly when the program is reloaded. This enables some very nice features:
 1. You can change **any part** of your program without breaking replay. Even if you modify/remove a message, it will still replay every message up until the first that is not part of the program anymore.
