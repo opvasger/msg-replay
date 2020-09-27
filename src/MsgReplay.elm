@@ -42,15 +42,15 @@ type alias Program flags model msg =
 Let's say your program is initialized in HTML like this:
 
     <script>
-        const app = Elm.MsgReplay.init({
+        const app = Elm.Main.init({
             node: document.body,
             flags: {
-                amr : localStorage.getItem("app-amr")
+                messages : localStorage.getItem("msg-replay")
             }
         })
 
-        app.ports.toCache.subscribe(output =>
-            localStorage.setItem("app-amr", output)
+        app.ports.toCache.subscribe(messages =>
+            localStorage.setItem("msg-replay", messages)
         )
     </script>
 
@@ -59,9 +59,9 @@ The configuration for that script would be like this:
     port toCache : Maybe String -> Cmd msg
 
     fromCache =
-        .amr
+        .messages
 
-`encodeMsg` and `msgDecoder` depends how messages are defined. You can find an example [here](https://ellie-app.com/6LPwsV9sgpJa1).
+`encodeMsg` and `msgDecoder` depends on how messages are defined.
 
 -}
 type alias Config flags msg =
@@ -72,7 +72,7 @@ type alias Config flags msg =
     }
 
 
-{-| Create a “sandboxed” program that cannot communicate with the outside world. More about that [here](https://package.elm-lang.org/packages/elm/browser/1.0.1/Browser#sandbox).
+{-| Create a “sandboxed” program that cannot communicate with the outside world. More about that [here](https://package.elm-lang.org/packages/elm/browser/latest/Browser#sandbox).
 -}
 sandbox :
     Config flags msg
@@ -99,7 +99,7 @@ sandbox config app =
         }
 
 
-{-| Create an HTML element managed by Elm. More about that [here](https://package.elm-lang.org/packages/elm/browser/1.0.1/Browser#element).
+{-| Create an HTML element managed by Elm. More about that [here](https://package.elm-lang.org/packages/elm/browser/latest/Browser#element).
 -}
 element :
     Config flags msg
@@ -124,7 +124,7 @@ element config app =
         }
 
 
-{-| Create an HTML document managed by Elm. More about that [here](https://package.elm-lang.org/packages/elm/browser/1.0.1/Browser#document).
+{-| Create an HTML document managed by Elm. More about that [here](https://package.elm-lang.org/packages/elm/browser/latest/Browser#document).
 -}
 document :
     Config flags msg
@@ -149,7 +149,7 @@ document config app =
         }
 
 
-{-| Create an application that manages Url changes. More about that [here](https://package.elm-lang.org/packages/elm/browser/1.0.1/Browser#application).
+{-| Create an application that manages Url changes. More about that [here](https://package.elm-lang.org/packages/elm/browser/latest/Browser#application).
 -}
 application :
     Config flags msg
