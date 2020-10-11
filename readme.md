@@ -5,6 +5,10 @@ This project sets out to solve the same problems as "hot-reloading" known from J
 
 ![Demo Gif](https://raw.githubusercontent.com/opvasger/msg-replay/0293828e73ef1b764a700bd8b003da202402871e/demo.gif)
 
+## Patterns
+You can find some patterns that build on the way this module works in [the wiki](https://github.com/opvasger/msg-replay/wiki). Let me know if you have some of your own that you think would improve the experience using this module.
+
+## How it works
 As [the Elm architecture](https://guide.elm-lang.org/architecture/) makes you model your interactions (usually dubbed `Msg`), I've designed the programs in this module to record those interactions, and then replay them instantly when the program is reloaded. This enables some very nice features:
 1. You can change **any part** of your program without breaking replay. Even if you modify/remove a message, it will still replay every message up until the first that is not part of the program anymore.
 2. Replaying messages rather than storing the state of your application makes for very interactive programming, where you can change bits of logic and instantly see the results of the change you made without having to get the application back into the right state.
