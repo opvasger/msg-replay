@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example</title>
+    <script src="build/main.js"></script>
+  </head>
+  <body>
+    <script>
+      const isDevelopment = Elm.Main.Development !== undefined;
+
+      const config = {
+        node: document.body,
+        flags: {
+          messages: isDevelopment ? localStorage.getItem("messages") : null,
+        },
+      };
+
+      const ports = isDevelopment
+        ? Elm.Main.Development.init(config).ports
+        : Elm.Main.init(config).ports;
+
+      if (isDevelopment) {
+        ports.toCache.subscribe((messages) => {
+          localStorage.setItem("messages", messages);
+        });
+      }
+    </script>
+  </body>
+</html>

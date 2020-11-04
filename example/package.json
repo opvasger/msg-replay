@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "start live-server . --watch build && nodemon --watch src --ext elm --exec \"npm run build\"",
+    "build": "elm make --output=build/main.js src/Main/Development.elm",
+    "build:production": "elm make --optimize --output=build/main.js src/Main.elm && npm run optimize",
+    "optimize": "esbuild --pure:F2 --pure:A2 --pure:F3 --pure:A3 --pure:F4 --pure:A4 --pure:F5 --pure:A5 --pure:F6 --pure:A6 --pure:F7 --pure:A7 --pure:F8 --pure:A8 --pure:F9 --pure:A9 --minify --outfile=build/main.min.js build/main.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.8.3",
+    "live-server": "1.2.1",
+    "nodemon": "2.0.6"
+  }
+}
